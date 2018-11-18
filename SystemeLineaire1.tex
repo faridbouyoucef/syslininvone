@@ -295,8 +295,41 @@ Dans un premier temps, nous allons étudier le modèle non linéaire représent�
 
  
  %pour espace    \hspace{2mm}
- 
- 
+\chapter{RÉGULATION DU MODÈLE LINÉARISÉ}
+
+ \section{Schéma de loi de commande permettant de placer les valeurs propres du système bouclé en}
+  $p=
+  \begin{bmatrix}
+  -108&-0.3&-4.3+2.2i&-4.3-2.2i
+  \end{bmatrix}^{T}$\\
+  
+  
+   Les pôles a partie  réelles négatives nous permet d'avoir un système stable .\\
+
+   La convergence vers le point d’équilibre est  assuré a l'aide des partie imaginaire des pôles,le pôles    le plus grande nous as permet d’augmenter la rapidité du system.\\ 
+   
+   \section{Simuler la réponse aux conditions initiales sur le modèle linéarisé}          
+       
+\begin{center}
+\includegraphics[scale=0.6]{simdispol.png}
+\captionof{figure}{\textit{Simulateur du dispositif Linéaire}}
+\label{fig}
+\end{center}
+
+
+
+   On s’approchant du point d’équilibre on vois que  $\alpha$ et $\theta$ ont un comportement exponentiels qui converge vers 0 a l'infini.\\ 
+
+\begin{center}
+{\includegraphics[scale=0.6]{figue1.png}} 
+\captionof{figure}{\textit{itsimulation $\alpha$}}
+\label{fig}
+\quad
+
+{\includegraphics[scale=0.6]{figue2.png}} 
+\captionof{figure}{\textit{simulation $\theta$}}
+\label{fig}
+\end{center}
 
 
 % *********************** Conclusion *****************
