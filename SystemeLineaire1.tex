@@ -430,8 +430,125 @@ Remarque: le système est stable asymptotique.
 
 \chapter{IMPLANTATION LOI DE COMMANDE SUR LE DISPOSITIF RÉEL}
      
-       
+     Nous constatons que les valeurs après simulation et  
+    $K_{haut}$=
+$$
+\begin{matrix}
+-4.4472 &  36.9886  & -3.3994 &   5.3447
+\end{matrix} 
+$$     
+
+     On va généré grâce à la commande $acker(A_{haut},B_{haut},p)$
+pour les pôles $p$=
+$$
+\begin{matrix}
+-108&-0.3&-4.3+2.2i&-4.3-2.2i
+\end{matrix}^{T}
+$$
+
+     Qui va nous permettre  de stabiliser asymptotiquement $\alpha$ à la valeur final nul tandis que $\theta$ pressente des erreurs car elle n'est pas  stable au point  0.
      
+\chapter{APPROCHE ROBUSTE: COMMANDE INTÉGRALE}
+     En premier lieux on suppose que les perturbation causé par le système en boucle fermer comme des perturbation constante qui agissent sur la sortie de $\theta$ voir la figure ci-dessous.  
+     
+
+\begin{center}
+\includegraphics[scale=0.6]{fig11.png} 
+\captionof{figure}{\textit{Retour d’état avec commande intégrale}}
+\label{fiig11}
+\end{center}   
+
+    \section{Représentation d'état du système} 
+     
+     \begin{equation*}
+    \left\{\begin{matrix}
+    \dot{x}(t)=Ax(t)+Bu(t)\\ 
+    \dot{x_{i}}(t)=Y_{c}-Cx(t)\\
+    y(t)=Cx(t)\\
+    u(t)=Kx(t)+k_{i}x_{i}(t)
+    \end{matrix}\right.
+    \end{equation*}
+    
+    \begin{equation}
+    \binom{\dot{x}}{\dot{x_{i}}}=\begin{bmatrix}
+    A & 0\\ 
+    -C & 0 
+    \end{bmatrix}\binom{x}{x_{i}}+\begin{bmatrix}
+    B &0 \\ 
+    0 & 1
+    \end{bmatrix}\binom{U}{Y_{c}}
+    \end{equation}
+    
+    \begin{equation*}
+    U=[K  \; K_{i}] \binom{x}{x_{i}}\\
+\end{equation*}
+
+
+\begin{equation*}
+\Rightarrow\binom{\dot{x}}{\dot{x_{i}}}=\begin{bmatrix}
+A & 0\\ 
+-C & 0 
+\end{bmatrix}\binom{x}{x_{i}}+\begin{bmatrix}
+BK & BK_{i}\\ 
+ 0& 0
+\end{bmatrix}\binom{x}{x_{i}}+ \binom{0}{1}\begin{bmatrix}
+Y_{c}
+\end{bmatrix}
+\end{equation*}
+
+
+le nouveau vecteur d'état\\
+
+ 
+ $x_{int}$=
+$$ 
+ \begin{matrix}
+\theta(t) & \alpha(t)& \dot{\theta}(t) & \dot{\alpha}(t)&\theta_{\epsilon}(t) 
+\end{matrix}^{T}
+ $$
+\\
+
+$A_{int}$ =
+$$
+\begin{matrix}
+ 0&0&1&0&0\\
+ 0&0&0&1&0\\
+ 0&81.4033&-28.8249&-0.9319&0\\
+ 0&122.0545&-27.7372&-1.3972&0\\
+ -1&0&0&0&0
+\end{matrix}
+$$
+
+$B_{int}$ =
+$$
+\begin{matrix}
+        0\\
+         0\\
+   51.8323\\
+   49.8764\\
+         0
+\end{matrix}
+$$
+\quad\quad\quad\
+$C_{int}$ =
+$$
+\begin{matrix}
+     1&0&0&0&0\\
+     0&1&0&0&0
+\end{matrix}
+$$
+\quad\quad
+$D_{int}$=
+$$
+\begin{matrix}
+0\\
+0
+\end{matrix}
+$$
+
+    \section{Calcul de K\{int\}}
+
+
 % *********************** Conclusion *****************
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
