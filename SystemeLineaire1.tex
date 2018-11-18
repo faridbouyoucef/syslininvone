@@ -297,7 +297,7 @@ Dans un premier temps, nous allons étudier le modèle non linéaire représent�
  %pour espace    \hspace{2mm}
 \chapter{RÉGULATION DU MODÈLE LINÉARISÉ}
 
- \section{Schéma de loi de commande permettant de placer les valeurs propres du système bouclé en}
+     \section{Schéma de loi de commande permettant de placer les valeurs propres du système bouclé en}
   $p=
   \begin{bmatrix}
   -108&-0.3&-4.3+2.2i&-4.3-2.2i
@@ -308,30 +308,95 @@ Dans un premier temps, nous allons étudier le modèle non linéaire représent�
 
    La convergence vers le point d’équilibre est  assuré a l'aide des partie imaginaire des pôles,le pôles    le plus grande nous as permet d’augmenter la rapidité du system.\\ 
    
-   \section{Simuler la réponse aux conditions initiales sur le modèle linéarisé}          
+    \section{Simuler la réponse aux conditions initiales sur le modèle linéarisé}          
        
 \begin{center}
 \includegraphics[scale=0.6]{simdispol.png}
 \captionof{figure}{\textit{Simulateur du dispositif Linéaire}}
-\label{fig}
+\label{simdispol}
 \end{center}
 
 
 
-   On s’approchant du point d’équilibre on vois que  $\alpha$ et $\theta$ ont un comportement exponentiels qui converge vers 0 a l'infini.\\ 
+     On s’approchant du point d’équilibre on vois que  $\alpha$ et $\theta$ ont un comportement exponentiels qui converge vers 0 a l'infini.\\ 
 
 \begin{center}
 {\includegraphics[scale=0.6]{figue1.png}} 
 \captionof{figure}{\textit{itsimulation $\alpha$}}
-\label{fig}
+\label{figue1}
 \quad
 
 {\includegraphics[scale=0.6]{figue2.png}} 
 \captionof{figure}{\textit{simulation $\theta$}}
-\label{fig}
+\label{figue2}
+\end{center}
+
+    \section{Simuler la réponse aux conditions initiales sur le modèle non linéaire}
+   
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig3.png}}
+\captionof{figure}{\textit{Simulateur du dispositif Non-Linéaire}}
+\label{fiig3}
+\end{center}
+
+     Autour du point d’équilibre le modèle non linéaire se comporte comme le modèle linéaire.   
+
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig4.png}}
+\captionof{figure}{\textit{simulation $\alpha$}}
+\label{fiig4} 
+\end{center}
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig5.png}} 
+\captionof{figure}{\textit{simulation $\theta$}}
+\label{fiig5}
 \end{center}
 
 
+    \section{Étant trop éloignées du point d'équilibre}
+     
+         Après la simulation du modèle linéaire et non linéaire on remarque que le non linéaire devient instable.\\
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig6.png}}
+\captionof{figure}{\textit{simulation $\alpha$}}
+\label{fiig6} 
+\quad
+
+
+{\includegraphics[scale=0.6]{fig7.png}}
+\captionof{figure}{\textit{simulation $\theta$}}
+\label{fiig7}
+\end{center}  
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig8.png}} 
+\captionof{figure}{\textit{simulation $\alpha$}}
+\label{fiig8}
+\quad
+{\includegraphics[scale=0.6]{fig9.png}} 
+\captionof{figure}{\textit{simulation $\theta$}}
+\label{fiig9}
+\end{center}
+
+
+    \section{Vue par l'observateur}
+
+\begin{center}
+{\includegraphics[scale=0.6]{fig10.png}} 
+\captionof{figure}{\textit{simulation vue par l'observateur}}
+\label{fiig10}
+\end{center} 
+
+Remarque: le système est stable asymptotique.
+
+\chapter{Implantation  De La Loi De Commande Sur Le Dispositif  Réel}
+     
+       
+     
 % *********************** Conclusion *****************
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
