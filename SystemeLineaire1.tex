@@ -189,7 +189,7 @@ centre de masse est noté $J_{p}$. On note l'angle que fait l'axe du pendule ave
 deux équations différentielles suivantes : \\[0.5cm]\\
 
 \begin{center}
-\includegraphics[scale=0.8]{SchemaPendule.png}
+\includegraphics[scale=1]{ShemaPendule.png}
 \captionof{figure}{\textit{Schéma du pendule rotatif.}}
 \label{fig2} 
 \end{center}
@@ -223,10 +223,10 @@ deux équations différentielles suivantes : \\[0.5cm]\\
 \hline $\eta_{g}$  &  Rendement du réducteur  & $0.9$  \\
 \hline $\eta_{m}$  &  Rendement du moteur  & $0.69$  \\
 \hline $K_{g}$  &  Rapport de vitesse  & $70$  \\
-\hline $K_{m}$  &  Gain f.e.m  & $7.68*10^{-3} V/(rad/s)$ \\
-\hline $K_{t}$  &  Gain couple moteur/courant  & $7.68*10^{-3} N.(m/A)$\\
+\hline $K_{m}$  &  Gain f.e.m  & $7.68\times10^{-3} V/(rad/s)$ \\
+\hline $K_{t}$  &  Gain couple moteur/courant  & $7.68\times10^{-3} N.(m/A)$\\
 \hline $J_{p}$ &  Moment d'inertie du pendule au ctr de masse & $0.0012 kg/m^{2}$ \\
-\hline $J_{r}$  &  Moment d'inertie du bras au ctr de masse  & $9.98*10^{-4} kg/m^{2}$ \\
+\hline $J_{r}$  &  Moment d'inertie du bras au ctr de masse  & $9.98\times10^{-4} kg/m^{2}$ \\
 \hline $L_{m}$  &   Inductance du moteur & $0.18 mH$\\
 \hline $L_{p}$  &  longueur du pendule  & $0.337 m$ \\
 \hline $L_{r}$  &  Inductance du bras, du pivot à l'extrémité   & $0.216 m$ \\
@@ -237,25 +237,34 @@ deux équations différentielles suivantes : \\[0.5cm]\\
 
 \hline 
 \end{tabular}
-\captionof{table}{\textit{Liste des données spécifique au système}}
+\captionof{table}{\textit{Liste des données spécifique au système}} 
 \end{center} 
 
+$\bigg(m_{p}L_{r}^{2} + \frac{1}{4}m_{p}L_{p}^{2} - \frac{1}{4}m_{p}L_{p}^{2}cos(\alpha^{2}) + J_{r} \bigg)\ddot{\theta}- \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha) \bigg)\ddot{\alpha}+$\\  $\bigg(\frac{1}{2}m_{p}L_{p}^{2}\sin(\alpha)\cos(\alpha) \bigg)\dot{\theta}\dot{\alpha} + \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\sin(\alpha) \bigg)\dot{\alpha}^{2}=\frac{\eta_{g}K_{g}\eta_{m}k_{t}(V_{m}- K_{g}k_{m}\dot{\theta})}{R_{m}}-B_{r}\dot{\theta}$ $\hspace{1mm}(1)$ \\\\\\\\ 
 
-$\bigg(m_{p}L_{r}^{2}+\frac{1}{4}m_{p}L_{r}-\frac{1}{4}m_{p}L_{r}^{2}\cos(\alpha)^{2} +J_{r} \bigg)\ddot{\theta}- \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha) \bigg)\ddot{\alpha}+$\\ $\bigg(\frac{1}{2}m_{p}L_{p}^{2}\sin(\alpha)\cos(\alpha) \bigg)\dot{\theta}\dot{\alpha} + \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\sin(\alpha) \bigg)\dot{\alpha}^{2}=\frac{\eta_{g}K_{g}\eta_{m}k_{t}(V_{m}- K_{g}k_{m}\dot{\theta})}{R_{m}}-B_{r}\dot{\theta}$ $\hspace{1mm}(1)$ \\ 
-
-$-\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha)\dot{\theta}+(J_{p}+\frac{1}{4}m_{p}L_{p}^{2})\ddot{\alpha}-\frac{1}{4}m_{p}L_{p}^{2}\cos(\alpha)\sin(\alpha)\dot{\theta}^{2}-\frac{1}{4}m_{p}L_{p}g\sin(\alpha)$\\$=-B_{p}\dot{\alpha}$   $\hspace{3mm}(2)$ \\
+$-\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha)\dot{\theta}+(J_{p}+\frac{1}{4}m_{p}L_{p}^{2})\ddot{\alpha}-\frac{1}{4}m_{p}L_{p}^{2}\cos(\alpha)\sin(\alpha)\dot{\theta}^{2}-\frac{1}{4}m_{p}L_{p}g\sin(\alpha)$\\$=-B_{p}\dot{\alpha}$   $\hspace{3mm}(2)$ \\\\\\
   
   %$\bigg(m_{p}L_{r}^{2} + \frac{1}{4}m_{p}L_{p}^{2} - \frac{1}{4}m_{p}L_{p}^{2}cos(\alpha^{2}) + J_{r} \bigg)$ $\ddot{\theta}$
 
    
 
 
-\section{Étude succinte du modèle non linéaire  }
+\section{Étude succincte du modèle non linéaire  }
 
-                                                 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%% Tableau%%%%%%%%%%%%%%%%%%%ù
+Dans un premier temps, nous allons étudier le modèle non linéaire représenté par les deux équations (1),(2) du mouvent.
+ \subsection{proposition des variables d'état :}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ \subsection{Les points d'équilibres en fonction de $V_{m}$ :}
+                                                   
 
 
 
