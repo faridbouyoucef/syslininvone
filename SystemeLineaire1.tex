@@ -60,6 +60,12 @@
 
 \usepackage{verbatim} % pour le code en annexe 
 
+%%%%%%%colones 
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+%%%%%%% 
+
 \renewcommand{\appendixpagename}{Annexes}
 \renewcommand{\appendixtocname}{Annexes}
 
@@ -190,7 +196,23 @@ deux équations différentielles suivantes : \\[1cm]\\
                                                  
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%% Tableau%%%%%%%%%%%%%%%%%%%ù
 
+
+
+\begin{tabular}{|R{2cm}|C{8cm}|L{2.5cm}|}
+\hline \rowcolor{lightgray} Symbole & Description &  Valeur  \\
+\hline  \begin{center} $B_{p}$\end{center}  &  \begin{center}Coefficient de frottement visqueux du pendule\end{center}  & \begin{center}$0.0024 kg/m^{2}$ \end{center}  \\
+\hline  \begin{center} $B_{r}$\end{center} & \begin{center}Coefficient de frottement visqueux du bras\end{center} & \begin{center}$0.0024 kg/m^{2}$ \end{center}\\
+\hline  \begin{center} $\eta_{g}$\end{center}  &  \begin{center}Rendement du réducteur\end{center}  & \begin{center}$0.9$ \end{center}  \\
+\hline  \begin{center} $\eta_{m}$\end{center}  &  \begin{center}Rendement du moteur\end{center}  & \begin{center}$0.69$ \end{center}  \\
+\hline  \begin{center} $K_{g}$\end{center}  &  \begin{center}Rapport de vitesse\end{center}  & \begin{center}$70$ \end{center}  \\
+
+\hline 
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
