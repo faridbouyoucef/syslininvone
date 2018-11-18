@@ -186,15 +186,66 @@
 centre de masse est noté $J_{p}$. On note l'angle que fait l'axe du pendule avec l'axe verticale $\alpha$ (en radian).\\
  Tous les calculs de la modélisation se feront en prenant pour origine, la position haute du pendule. pour les descriptions et les valeurs numériques des constantes se reporter à la Table (num du table....) \\
  Les équations du mouvement, déterminées à l'aide de la mécanique Lagrangienne, sont données par les
-deux équations différentielles suivantes : \\[1cm]\\
+deux équations différentielles suivantes : \\[0.5cm]\\
 
- %\big(a+b \big) \\ 
- %\bigg(a+b+c \bigg) \\
- %\Big(a+b+c+d \Big)\\
- %\Bigg(a+bjhbnjkhnkjn \Bigg)\\
+\begin{center}
+\includegraphics[scale=0.8]{SchemaPendule.png}
+\captionof{figure}{\textit{Schéma du pendule rotatif.}}
+\label{fig2} 
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline \rowcolor{mauve} $N^{0}$ & Composant\\
+\hline 1 & SRV02\\
+\hline 2 & Vis\\
+\hline 3 & Bras\\
+\hline 4 & Logement d’arbre\\
+\hline 5 & Arbre\\
+\hline 6 & Raccord\\
+\hline 7 & Pendule\\
+\hline 8 & Connecteur de l'encodeur\\
+\hline 9 & Encodeur\\
+\hline
+\end{tabular}
+
+\captionof{table}{\textit{Nomenclature des composants de la maquette.}}
+\end{center}
+
      
 
-  $\bigg(m_{p}L_{r}^{2} + \frac{1}{4}m_{p}L_{p}^{2} - \frac{1}{4}m_{p}L_{p}^{2}cos(\alpha^{2}) + J_{r} \bigg)$ $\ddot{\theta}$
+\begin{center}
+\begin{tabular}{|l|c|r|}
+\hline \rowcolor{mauve} Symbole & Description &  Valeur  \\
+\hline $B_{p}$  &  Coef de frottement visqueux du pendule  & $0.0024 kg/m^{2}$   \\
+\hline $B_{r}$ & Coef de frottement visqueux du bras & $0.0024 kg/m^{2}$ \\
+\hline $\eta_{g}$  &  Rendement du réducteur  & $0.9$  \\
+\hline $\eta_{m}$  &  Rendement du moteur  & $0.69$  \\
+\hline $K_{g}$  &  Rapport de vitesse  & $70$  \\
+\hline $K_{m}$  &  Gain f.e.m  & $7.68*10^{-3} V/(rad/s)$ \\
+\hline $K_{t}$  &  Gain couple moteur/courant  & $7.68*10^{-3} N.(m/A)$\\
+\hline $J_{p}$ &  Moment d'inertie du pendule au ctr de masse & $0.0012 kg/m^{2}$ \\
+\hline $J_{r}$  &  Moment d'inertie du bras au ctr de masse  & $9.98*10^{-4} kg/m^{2}$ \\
+\hline $L_{m}$  &   Inductance du moteur & $0.18 mH$\\
+\hline $L_{p}$  &  longueur du pendule  & $0.337 m$ \\
+\hline $L_{r}$  &  Inductance du bras, du pivot à l'extrémité   & $0.216 m$ \\
+\hline $m_{p}$  &  Masse du pendule  & $0.127 kg$\\
+\hline $m_{r}$  &   Masse du bras  & $0.257 kg$\\
+\hline $R_{m}$  &   Résistance du moteur  & $2.60 \Omega$ \\
+\hline $V_{m}$  &  Tension envoyé au moteur   &  A régler \\
+
+\hline 
+\end{tabular}
+\captionof{table}{\textit{Liste des données spécifique au système}}
+\end{center} 
+
+
+$\bigg(m_{p}L_{r}^{2}+\frac{1}{4}m_{p}L_{r}-\frac{1}{4}m_{p}L_{r}^{2}\cos(\alpha)^{2} +J_{r} \bigg)\ddot{\theta}- \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha) \bigg)\ddot{\alpha}+$\\ $\bigg(\frac{1}{2}m_{p}L_{p}^{2}\sin(\alpha)\cos(\alpha) \bigg)\dot{\theta}\dot{\alpha} + \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\sin(\alpha) \bigg)\dot{\alpha}^{2}=\frac{\eta_{g}K_{g}\eta_{m}k_{t}(V_{m}- K_{g}k_{m}\dot{\theta})}{R_{m}}-B_{r}\dot{\theta}$ $\hspace{1mm}(1)$ \\ 
+
+$-\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha)\dot{\theta}+(J_{p}+\frac{1}{4}m_{p}L_{p}^{2})\ddot{\alpha}-\frac{1}{4}m_{p}L_{p}^{2}\cos(\alpha)\sin(\alpha)\dot{\theta}^{2}-\frac{1}{4}m_{p}L_{p}g\sin(\alpha)$\\$=-B_{p}\dot{\alpha}$   $\hspace{3mm}(2)$ \\
+  
+  %$\bigg(m_{p}L_{r}^{2} + \frac{1}{4}m_{p}L_{p}^{2} - \frac{1}{4}m_{p}L_{p}^{2}cos(\alpha^{2}) + J_{r} \bigg)$ $\ddot{\theta}$
 
    
 
@@ -207,18 +258,9 @@ deux équations différentielles suivantes : \\[1cm]\\
 %%%%%%%%%%%%%%%%%%%%%%%%% Tableau%%%%%%%%%%%%%%%%%%%ù
 
 
-\begin{center}
-%\begin{tabular}{|R{2cm}|C{8cm}|L{2.5cm}|}
-\begin{tabular}{|l|c|r|}
-\hline \rowcolor{lightgray} Symbole & Description &  Valeur  \\
-\hline  $B_{p}$  &  Coefficient de frottement visqueux du pendule  & $0.0024 kg/m^{2}$   \\
-\hline  $B_{r}$ & Coefficient de frottement visqueux du bras & $0.0024 kg/m^{2}$ \\
-\hline  $\eta_{g}$  &  Rendement du réducteur  & $0.9$  \\
 
-\hline 
-\end{tabular}
-\captionof{table}{Liste des données spécifique au système}
-\end{center}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -238,29 +280,10 @@ deux équations différentielles suivantes : \\[1cm]\\
 %*********************** Problématique **************
 \chapter{Analyse temporelle et structurelle du modèle linéarisé }
  %\chaptermark{Cmd proportionnelle intégrales} (pour avoir ce titre en petit 
-\begin{center}
-\begin{tabular}{|R{2cm}|C{8cm}|L{2.5cm}|} 
-\hline \rowcolor{lightgray} Symbole & Description &  Valeur  \\
-\hline  \begin{center} $B_{p}$\end{center}  &  \begin{center}Coefficient de frottement visqueux du pendule\end{center}  & \begin{center}$0.0024 kg/m^{2}$ \end{center}  \\
-\hline  \begin{center} $B_{r}$\end{center} & \begin{center}Coefficient de frottement visqueux du bras\end{center} & \begin{center}$0.0024 kg/m^{2}$ \end{center}\\
-\hline  \begin{center} $\eta_{g}$\end{center}  &  \begin{center}Rendement du réducteur\end{center}  & \begin{center}$0.9$ \end{center}  \\
-\hline  \begin{center} $\eta_{m}$\end{center}  &  \begin{center}Rendement du moteur\end{center}  & \begin{center}$0.69$ \end{center}  \\
-\hline  \begin{center} $K_{g}$\end{center}  &  \begin{center}Rapport de vitesse\end{center}  & \begin{center}$70$ \end{center}  \\
-\hline  \begin{center} $K_{m}$\end{center}  &  \begin{center}Gain f.e.m\end{center}  & \begin{center}$7.68*10^{-3} V/(rad/s)$ \end{center} \\
-\hline  \begin{center} $K_{t}$\end{center}  &  \begin{center}Gain couple moteur/courant\end{center}  & \begin{center}$7.68*10^{-3} N.(m/A)$ \end{center}\\
-\hline  \begin{center} $J_{p}$\end{center}  &  \begin{center}Moment d'inertie du pendule au centre dde masse \end{center}  & \begin{center}$0.0012 kg/m^{2}$ \end{center}\\
-\hline  \begin{center} $J_{r}$\end{center}  &  \begin{center}Moment d'inertie du bras au centre dde masse \end{center}  & \begin{center}$9.98*10^{-4} kg/m^{2}$ \end{center}\\
-\hline  \begin{center} $L_{m}$\end{center}  &  \begin{center} Inductance du moteur \end{center}  & \begin{center}$0.18 mH$ \end{center}\\
-\hline  \begin{center} $L_{p}$\end{center}  &  \begin{center} longueur du pendule \end{center}  & \begin{center}$0.337 m$ \end{center}\\
-\hline  \begin{center} $L_{r}$\end{center}  &  \begin{center} Inductance du bras, du pivot à l'extrémité \end{center}  & \begin{center}$0.216 m$ \end{center}\\
-\hline  \begin{center} $m_{p}$\end{center}  &  \begin{center} Masse du pendule \end{center}  & \begin{center}$0.127 kg$ \end{center}\\
-\hline  \begin{center} $m_{r}$\end{center}  &  \begin{center} Masse du bras \end{center}  & \begin{center}$0.257 kg$ \end{center}\\
-\hline  \begin{center} $R_{m}$\end{center}  &  \begin{center} Résistance du moteur \end{center}  & \begin{center}$2.60 \Omega$ \end{center}\\
-\hline  \begin{center} $V_{m}$\end{center}  &  \begin{center} Tension envoyé au moteur \end{center}  & \begin{center} A régler \end{center}\\
-\hline 
-\end{tabular}
-\captionof{table}{Liste des données spécifique au système} 
- \end{center}
+
+
+
+
  
  %pour espace    \hspace{2mm}
  
