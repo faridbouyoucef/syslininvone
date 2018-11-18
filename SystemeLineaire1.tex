@@ -309,9 +309,143 @@ D’après la figure 1.4 on remarquant que $\alpha$ tend vers $-\pi$ et de même
 tend vers l'infini, ce qui ne donne un bruit, on souhaite alors d'avoir aussi $\theta$ qui varié peut ou bien d'avoir $\theta$=cste, \hyperref[section1.1]{voir Annexe 1}\label{annexe1}.\\\\
 
 \section{Linéarisation et obtention d'un modèle linéaire}
+\paragraph{Linéarisation du système non linéaire :\\}
+Dans cette partie on a choisit comme variable d'état :
+
+ $x(t)=\bigg[\theta(t)\hspace{3mm}\alpha(t)\hspace{3mm} \dot{\theta}(t)\hspace{3mm} \dot{\alpha}(t)\bigg]^{T}$ \\  
+   et à cet effet on utilise une décomposition en série de Taylor arrêtée à l'ordre 1 :\\
+   
+   $\tilde{f}(z)=f(z_{o})+\left.\begin{matrix}\sum_{i=1}^{n}\frac{\partial f }{\partial zi}\end{matrix}\right|_{z_0} (z_{i}-z_{o})$ \\\\ 
+   
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   On cherche a avoir des équations en fonction de:  $\ddot{\theta }$, $\ddot{\alpha}$, $\dot{\alpha}$ et $\dot{\theta}$. On va isoler d'abord $\ddot{\theta }\:$ et ensuite $\ddot{\alpha}$.
+
+D'après l'équation (1) du Chapitre 1, on a : \\
 
 
+    $E\ddot{\theta }-F\ddot{\alpha}+ G\dot{\alpha}\dot{\theta}+H\dot{\alpha}^2=IV_{m}-IK_{g}K_{m}\dot{\theta}-B_{r}\dot{\theta}$\\\\
 
+et aussi d'après l'équation (2) du Chapitre 1, on a :\\ 
+
+
+$-{E}'\ddot{\theta}+{F}'\ddot{\alpha}-{G}'\dot{\theta}^2-{H}'=-B_{p}\dot{\alpha}$ \\\\
+
+avec: \\
+
+$E=(m_{p}{L_{r}}^2+\frac{1}{4}m_{p}{L_{p}}^2-\frac{1}{4}m_{p}{L_{p}}^2cos({\alpha})^2+Jr)$ \\
+
+$F=(\frac{1}{2}m_{p}L_{p}L_{r}cos(\alpha))$\\
+
+$G(\frac{1}{2}m_{p}{L_{p}}^2sin(\alpha)cos(\alpha))$\\
+
+$H=(\frac{1}{2}m_{p}L_{p}L_{r}sin(\alpha))$\\
+
+$I=(\frac{\eta_{g}K_{g}\eta_{m}k_{t}}{R_{m}})$\\
+
+${E}'=(\frac{1}{2}m_{p}L_{p}L_{r}cos(\alpha))$\\
+
+${F}'=(J_{p}+\frac{1}{4}m_{p}{L_{p}}^2)$\\
+
+${G}'=(\frac{1}{2}m_{p}{L_{p}}^2sin(\alpha)cos(\alpha))$\\
+
+${H}'=(\frac{1}{2}m_{p}L_{p}L_{r}gsin(\alpha))$\\\\
+
+et on va extraire $\ddot{\theta }$ et $\ddot{\alpha}$ et on obtient :\\
+
+ $\ddot{\theta }=\frac{1}{E}(F\ddot{\alpha}-G\dot{\alpha}\dot{\theta}-H\dot{\alpha}^2+IV_{m}-IK_{g}K_{m}\dot{\theta}-B_{r}\dot{\theta})$\\\\
+   ainsi :
+   $\ddot{\alpha}=\frac{1}{{F}'}({E}'\ddot{\theta}+{G}'\dot{\theta}^2+{H}'-B_{p}\dot{\alpha})$ \\
+
+
+ Premièrement, on remplace $\ddot{\alpha}$ dans l'équation de $\ddot{\theta}$ et on obtient :\\ 
+
+
+$\ddot{\theta}=\frac{1}{E{F}'-F{E}'}(F{G}'\dot{\theta}^2+F{H}'-FB_{p}\dot{\alpha}-G{F}'\dot{\alpha}\dot{\theta}-H{F}'\dot{\alpha}^2+I{F}'V_{m}-{F}'IK_{g}K_{m}\dot{\theta}$\\$-{F}'B_{r}\dot{\theta})$\\ 
+
+D'où :\\
+
+$J_{t} = E{F}'-F{E}'$\\\\ $=(m_{p}{L_{r}}^2+\frac{1}{4}m_{p}{L_{p}}^2-\frac{1}{4}m_{p}{L_{p}}^2cos({\alpha})^2+Jr)(J_{p}+\frac{1}{4}m_{p}{L_{p}}^2)$\\
+$-\frac{1}{2}m_{p}L_{p}L_{r}cos(\alpha))(\frac{1}{2}m_{p}L_{p}L_{r}cos(\alpha))$\\\\
+
+
+Après avoir réaliser les simplification et aussi on pose :  $cos(\alpha)=1$ , on obtient alors \\
+
+
+     $J_{t}=J_{p}m_{p}{L_{p}}^2+J_{p}J_{r}+\frac{1}{4}m_{p}{L_{p}}^2J_{r}$\\\\
+
+
+ En suite, on remplace $\ddot{\theta}$ dans l'équation de $\ddot{\alpha}$ et on obtient :\\
+
+    $\ddot{\alpha}=\frac{1}{E{F}'-F{E}'}(-{E}'G\dot{\alpha}\dot{\theta}-{E}'H\dot{\alpha}^2+{E}'IV_{m}-{E}'IK_{g}K_{m}\dot{\theta}+{E}'B_{r}\dot{\theta}+E{G}'\dot{\theta}^2+E{H}'$\\$-EB_{p}\dot{\alpha})$\\\\
+
+
+On dérivant, et on va construire la matrice $A_{haut}$ et le vecteur $B_{haut}$.\\
+On pose alors :\\
+
+$\alpha = 0 \Rightarrow \hspace{3mm} cos(\alpha) = 1$ et $sin(\alpha) = 0$ 
+
+
+\begin{equation*}
+\left\{\begin{matrix}
+\dot{x}(t) = \begin{bmatrix}
+\dot{\theta}(t)\\ 
+\dot{\alpha}(t)\\ 
+\ddot{\theta}(t)\\ 
+\ddot{\alpha}(t)
+\end{bmatrix} = A_{haut}*\begin{bmatrix}
+\theta(t)\\ 
+\alpha(t)\\ 
+\dot{\theta}(t)\\ 
+\dot{\alpha}(t)
+\end{bmatrix} + B_{haut} V_m\\ 
+
+Avec : \dot{x_1}(t) = x_3(t) = \dot{\theta}\; et \; \dot{x_2}(t) = x_4(t) = \dot{\alpha}
+\end{matrix}\right.
+\end{equation*}
+
+D’où : 
+\begin{equation*}
+    A_{haut} = \frac{1}{J_t} \begin{bmatrix}
+0 & 0 & J_t & 0\\
+0 & 0 & 0 & J_t\\
+0 & \frac{1}{4}{m_p}^2{L_p}^2L_rg & F'(-B_r-K_gK_mI)& -FB_p \\
+0 & \frac{1}{2}m_pL_pg(J_r+m_p{L_r}^2) & E'(B_r-K_gK_mI) & -EB_p\\
+\end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    B_{haut} = \begin{bmatrix}
+    0\\ 
+    0\\ 
+    F'I\\ 
+    E'I
+\end{bmatrix}
+\end{equation*}
+
+On remplace alors E,F,I,E',F' par leurs expressions que on a supposer au dessus, et on obtient : 
+\begin{equation*}
+    A_{haut} = \frac{1}{J_t} \begin{bmatrix}
+0 & 0 & J_t & 0\\
+0 & 0 & 0 & J_t\\
+0 & \frac{1}{4}{m_p}^2{L_p}^2L_rg & (J_p+\frac{1}{4}m_p{L_p}^2)(-B_r-K_gK_m\gamma)& -\frac{1}{2}m_pL_pL_rB_p \\
+0 & \frac{1}{2}m_pL_pg(J_r+m_p{L_r}^2) & (\frac{1}{2}m_pL_pL_r)(B_r-K_gK_m\gamma) & -(J_r+m_p{L_r}^2)B_p\\
+\end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    B_{haut} = \begin{bmatrix}
+    0\\ 
+    0\\ 
+    (J_p+ \frac{1}{4}m_p{L_p}^2)\gamma\\ 
+    \frac{1}{2}m_pL_pL_r\gamma
+\end{bmatrix}
+\end{equation*}
+
+
+\paragraph{Simulation de la réponse à des conditions initiales :\\}
+
+
+ilaq les figure ni .....
 
 
 
@@ -332,12 +466,18 @@ tend vers l'infini, ce qui ne donne un bruit, on souhaite alors d'avoir aussi $\
 %*********************** Problématique **************
 \chapter{Analyse temporelle et structurelle du modèle linéarisé }
  %\chaptermark{Cmd proportionnelle intégrales} (pour avoir ce titre en petit 
+\section{Analyse de la stabilité asymptotique du point d'équilibre haut}
+
 
 
 
 
  
- %pour espace    \hspace{2mm}
+ 
+ 
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%bouyoucef%%%%%%%%%%%%%%%
 \chapter{RÉGULATION DU MODÈLE LINÉARISÉ}
 
      \section{Schéma de loi de commande permettant de placer les valeurs propres du système bouclé en}
