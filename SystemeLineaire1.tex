@@ -547,10 +547,32 @@ $$
 $$
 
     \section{Calcul de K\{int\}}
+    
+    Pour les pôles $p\{int\}$=
+    $$\begin{matrix}
+-108&-4.3+2.25i&-4.3-2.25i&-0.4+0.35i&-0.4-0.35i
+\end{matrix}^{T}$$
+
+  La commande $acker(Aint,Bint,pi)$ qui nous as permet d'avoir les valeurs de 
+ 
+ $K\{int\}$=
+ $$\begin{matrix}
+-1.0203  & 25.2537 &  -2.0482  &  3.8764  &  0.3171
+\end{matrix}$$
+ces valeurs de $K\{int\}$ on permis de corriger l'erreur de position de $\theta$ et l'annule. 
 
 
-% *********************** Conclusion *****************
-\chapter*{Conclusion}
+\chapter{MONTÉE DU PENDULE}
+      Pour avoir un modèle linéarisé au point bas un modèle de valeur très oscillant, on utilisant des pôles imaginaire et a partie réelles négatives.   
+      
+      
+      % *********************** Conclusion ***************** 
+\chapter{Conclusion} 
+      Suit a ce TP on vue que ce modèle non linéaire est stable que autour du pont d'équilibre,ce que engendre l'instabilité on s’éloignant de ce point, mais pour le modèle linéaire est stable quelque soit le point choisit.
+      Ce TP nous permet la compréhension l’influence du point d’équilibre par apport aux modèle linéaire ou pas.
+      Ce que il nous a permet aussi de comprendre l'utilité de la robustesse pour assurée la stabilités des système.   
+
+
 \addcontentsline{toc}{chapter}{Conclusion}
 
 Ce TP nous a permet d'utiliser les différentes commandes de robustesse et a appris de définir un correcteur par étapes, cela en vérifiant chaque contrainte pour déterminer un meilleur correcteur.\\
