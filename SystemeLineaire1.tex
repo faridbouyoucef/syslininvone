@@ -21,20 +21,28 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{frame=tb,
-  language=Java,
+  language=Matlab,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
   basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
   breaklines=true,
   breakatwhitespace=true,
-  tabsize=3
+  tabsize=3,
+  breaklines=true,
+  morekeywords={matlab2tikz},
+  morekeywords=[2]{1}, 
+  keywordstyle=[2]{\color{black}},
+  identifierstyle=\color{black},
+  numbers=left,
+  numberstyle={\tiny \color{black}},
+  numbersep=9pt, 
+  emph=[1]{for,end,break},
+  emphstyle=[1]\color{red}
 }
 
 \usepackage{multirow} % pour les tableaux
@@ -298,7 +306,7 @@ $\alpha=-1$; $\theta=0$; $\dot{\alpha}=0$; $\dot{\theta} = 0:$ \\
 \end{center}
 
 D’après la figure 1.4 on remarquant que $\alpha$ tend vers $-\pi$ et de même pour $\theta$
-tend vers l'infini, ce qui ne donne un bruit, on souhaite alors d'avoir aussi $\theta$ qui varié peut ou bien d'avoir $\theta$=cste.\\\\
+tend vers l'infini, ce qui ne donne un bruit, on souhaite alors d'avoir aussi $\theta$ qui varié peut ou bien d'avoir $\theta$=cste, \hyperref[section1.1]{voir Annexe 1}\label{annexe1}.\\\\
 
 \section{Linéarisation et obtention d'un modèle linéaire}
 \paragraph{Linéarisation du système non linéaire :\\}
@@ -716,6 +724,7 @@ ces valeurs de $K\{int\}$ on permis de corriger l'erreur de position de $\theta$
 
 
 
+<<<<<<< HEAD
 
  %\chapter*{Annexe}
 % \addcontentsline{toc}{chapter}{Introduction}
@@ -731,6 +740,26 @@ ces valeurs de $K\{int\}$ on permis de corriger l'erreur de position de $\theta$
 
 % \end{verbatim}
 
+=======
+Ce TP nous a permet d'utiliser les différentes commandes de robustesse et a appris de définir un correcteur par étapes, cela en vérifiant chaque contrainte pour déterminer un meilleur correcteur.\\
+
+
+
+\begin{appendices}
+\chapter*{Annexe 1}
+	\addcontentsline{toc}{chapter}{Annexe 1}		
+		\begin{lstlisting}
+			%Reglage de Te et de l'initialisation
+    			Te=0.02;
+    			Theta_init=0;
+    			Alpha_init_nl=-1;%Origine en haut
+    			Alpha_init_sup=1;%Origine en haut
+    			Alpha_init_inf=0;%Origine en bas
+		\end{lstlisting}
+		%\hyperref[sec:hello]{Retour vers Section 1.1}
+		\hyperref[annexe1]{Retour vers Section 1.1}\label{section1.1}
+\end{appendices}
+>>>>>>> d53cbe1ca506db9eff3665f2afd2faff27d59668
 
 
 
@@ -739,6 +768,7 @@ ces valeurs de $K\{int\}$ on permis de corriger l'erreur de position de $\theta$
 %Bibliographie 
 %\bibliographystyle{alpha}
 %\bibliography{biblio}
+
 
 
 
