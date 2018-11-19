@@ -192,9 +192,8 @@
  La Figure 1.1 donne une représentation schématique du pendule. Le bras est relié au moteur, qui entraîne la rotation du bras et donc du pendule. Il a une longueur $L_{r}$ et un moment d'inertie $J_{r}$. Nous noterons son angle $\theta$.\\
  Le pendule, quant à lui, est lixé au bout du bras. Il a une longueur $L_{p}$ . Son moment d'inertie au
 centre de masse est noté $J_{p}$. On note l'angle que fait l'axe du pendule avec l'axe verticale $\alpha$ (en radian).\\
- Tous les calculs de la modélisation se feront en prenant pour origine, la position haute du pendule. pour les descriptions et les valeurs numériques des constantes se reporter à la Table (num du table....) \\
- Les équations du mouvement, déterminées à l'aide de la mécanique Lagrangienne, sont données par les
-deux équations différentielles suivantes : \\[0.5cm]\\
+ Tous les calculs de la modélisation se feront en prenant pour origine, la position haute du pendule. pour les descriptions et les valeurs numériques des constantes se reporter à la Table \ref{table12}\\
+ 
 
 \begin{center}
 \includegraphics[scale=1]{ShemaPendule.png}
@@ -245,8 +244,12 @@ deux équations différentielles suivantes : \\[0.5cm]\\
 
 \hline 
 \end{tabular}
-\captionof{table}{\textit{Liste des données spécifique au système}} 
+\captionof{table}{\textit{Liste des données spécifique au système}}
+\label{table12}
 \end{center} 
+
+Les équations du mouvement, déterminées à l'aide de la mécanique Lagrangienne, sont données par les
+deux équations différentielles suivantes : \\\\
 
 $\bigg(m_{p}L_{r}^{2} + \frac{1}{4}m_{p}L_{p}^{2} - \frac{1}{4}m_{p}L_{p}^{2}cos(\alpha^{2}) + J_{r} \bigg)\ddot{\theta}- \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\cos(\alpha) \bigg)\ddot{\alpha}+$\\  $\bigg(\frac{1}{2}m_{p}L_{p}^{2}\sin(\alpha)\cos(\alpha) \bigg)\dot{\theta}\dot{\alpha} + \bigg(\frac{1}{2}m_{p}L_{p}L_{r}\sin(\alpha) \bigg)\dot{\alpha}^{2}=\frac{\eta_{g}K_{g}\eta_{m}k_{t}(V_{m}- K_{g}k_{m}\dot{\theta})}{R_{m}}-B_{r}\dot{\theta}$ $\hspace{1mm}(1)$ \\\\\\\\ 
 
